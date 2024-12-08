@@ -41,6 +41,10 @@ android {
         jvmTarget = "17"
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
+    }
+
     buildFeatures {
         compose = true
     }
@@ -74,6 +78,12 @@ dependencies {
 
     implementation(libs.anvil.annotations)
     implementation(libs.anvil.annotations.optional)
+
+    // https://developer.android.com/develop/ui/compose/glance/setup
+    // For AppWidgets support
+    implementation(libs.androidx.glance.appwidget)
+    // For interop APIs with Material 3
+    implementation(libs.androidx.glance.material3)
 
     // Testing
     testImplementation(libs.junit)
